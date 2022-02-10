@@ -22,4 +22,4 @@ tv = data["g1"]+data["g2"]+data["e1"]+data["s1"]+data["s3"]
 
 df = pd.DataFrame((list(tv)), columns = ['title','start_time','subtitle','act','content'])
 az=(df.query('title.str.contains(@z)', engine='python'))
-st.write(az)
+st.dataframe(az)
