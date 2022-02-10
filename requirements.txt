@@ -1,2 +1,6 @@
 streamlit
-Pandas
+requests
+json
+datetime
+pandas
+re
