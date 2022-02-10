@@ -20,6 +20,7 @@ text = url.text
 data = json.loads(text)["list"]
 tv = data["g1"]+data["g2"]+data["e1"]+data["s1"]+data["s3"]
 
+pd.set_option("display.max_colwidth", 80)
 df = pd.DataFrame((list(tv)), columns = ['title','start_time','subtitle','act','content'])
 az=(df.query('title.str.contains(@z)', engine='python'))
 st.dataframe(az)
