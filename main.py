@@ -4,7 +4,6 @@ import json
 import datetime
 import pandas as pd
 import re
-import textwrap
 
 st.title("大分県関係の番組")
 
