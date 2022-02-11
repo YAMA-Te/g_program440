@@ -16,11 +16,11 @@ for i in range(0,8):
     url = requests.get(ap)
     text = url.text
     data = json.loads(text)["list"]
-    lst.append(data)
-
-df1 = pd.DataFrame(lst)
-tv = df1["g1"]+df1["e1"]+df1["s1"]+df1["s3"]
-df = pd.DataFrame((list(tv)), columns = ['start_time','title','subtitle','act','content'])
+    df1 = pd.DataFrame(data)
+    tv = df1["g1"]+df1["e1"]+df1["s1"]+df1["s3"]
+    lst.append(tv)
+    
+df = pd.DataFrame((list(lst)), columns = ['start_time','title','subtitle','act','content'])
 z=("大分")
 az=(df.query('title.str.contains(@z)|\
               subtitle.str.contains(@z)|\
