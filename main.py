@@ -23,5 +23,5 @@ for i in range(0,8):
     az=(df.query('title.str.contains(@z)|\
                  subtitle.str.contains(@z)|\
                  content.str.contains(@z)|\
-                 act.str.contains(@z)', engine='python'))
-　　 st.dataframe(az)
+                 act.str.contains(@z)', engine='python')
+        st.dataframe(az)
