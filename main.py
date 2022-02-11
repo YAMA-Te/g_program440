@@ -4,6 +4,7 @@ import json
 import datetime
 import pandas as pd
 import re
+import pytz
 
 st.title("大分県関係の番組")
 
