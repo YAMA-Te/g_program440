@@ -9,16 +9,18 @@ import pytz
 st.title("大分県関係の番組")
 now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
 lst=[]
-for i in range(0,8):
+for i in range(0,7):
     dayy = now+datetime.timedelta(days=i)
     du = dayy.strftime('%Y-%m-%d')
-    ap="https://api.nhk.or.jp/v2/pg/list/440/tv/"+du+".json?key=xQUIY1xXNVtrG9AQ1OWCdfHh4kD9iW1e"
+    ap="https://api.nhk.or.jp/v2/pg/list/440/tv/"+du+".json?key=2GD6o07t1gARYpXF19gsfbYgJwbjnDNP"
     url = requests.get(ap)
     text = url.text
-    data = json.loads(text)["list"]
-    df1 = pd.DataFrame(data)
-    tv = df1["g1"]+df1["e1"]+df1["s1"]+df1["s3"]
-    lst.append(tv)
+    data = json.loads(text)
+    b=data.keys()
+    print(b)
+    ke=data["list"]
+    tv = ke["g1"]+ke["e1"]+ke["s1"]+ke["s3"]
+    lst.extend(tv)
     
 df = pd.DataFrame((list(lst)), columns = ['start_time','title','subtitle','act','content'])
 z=("大分")
