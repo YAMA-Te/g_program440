@@ -24,4 +24,5 @@ for i in range(0,8):
                  subtitle.str.contains(@z)|\
                  content.str.contains(@z)|\
                  act.str.contains(@z)', engine='python')
-    st.dataframe(az)
+az1=df.join(az)
+st.dataframe(az1)
