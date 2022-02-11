@@ -20,7 +20,7 @@ for i in range(0,8):
 
 df1 = pd.DataFrame(lst)
 tv = df1["g1"]+df1["e1"]+df1["s1"]+df1["s3"]
-df = pd.DataFrame((list(df1)), columns = ['start_time','title','subtitle','act','content'])
+df = pd.DataFrame((list(tv)), columns = ['start_time','title','subtitle','act','content'])
 z=("大分")
 az=(df.query('title.str.contains(@z)|\
               subtitle.str.contains(@z)|\
